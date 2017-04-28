@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:an="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="walden.com.particleanimationtest.RainActivity">
+
+    <walden.com.particleanimationtest.LiziRain.RainView
+        android:id="@+id/rainview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f444"
+        an:rainnum="200">
+
+        <ImageView
+            android:id="@+id/image_rain"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/aaa" />
+
+        <Button
+            android:id="@+id/rain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="rain"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/snow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/rain"
+            android:text="snow"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/r_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/snow"
+            android:text="rain / snow"
+            android:textAllCaps="false" />
+    </walden.com.particleanimationtest.LiziRain.RainView>
+
+</RelativeLayout>
