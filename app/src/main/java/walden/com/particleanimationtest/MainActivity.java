@@ -99,6 +99,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @OnClick(R.id.bt_3)
+    void bt3() {
+        control(3, flag3, ps3, new Runnable() {
+            @Override
+            public void run() {
+                ps3 = new ParticleSystem(activity, 100, R.drawable.asw, 5000)
+                        .setSpeedRange(0.2f, 0.5f);
+                ps3.oneShot(sourcr_area, 20);
+            }
+        });
+    }
+
+    @OnClick(R.id.bt_4)
+    void bt4() {
+        control(4, flag4, ps4, new Runnable() {
+            @Override
+            public void run() {
+                ps4 = new ParticleSystem(activity, 10000, R.drawable.asw, 5000);
+                ps4.emit(sourcr_area, 50);
+            }
+        });
+    }
+
     private void control(int i, boolean flag, ParticleSystem ps, Runnable run) {
         if (flag) {
             run.run();
@@ -118,7 +141,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else {
-            ps.cancel();
+            if (ps != null) {
+                ps.cancel();
+            }
             switch (i) {
                 case 1:
                     flag1 = true;
