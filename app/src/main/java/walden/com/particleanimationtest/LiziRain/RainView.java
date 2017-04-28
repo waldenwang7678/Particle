@@ -14,7 +14,7 @@ import walden.com.particleanimationtest.R;
 public class RainView extends RelativeLayout {
     private int isRain = 0;
     private boolean isRun = true;
-    private control thread;
+    private ControlThread thread;
     Random random = new Random();
     ArrayList<RainItem> list = new ArrayList<RainItem>();  //粒子对象集合
     private int num = 100; //粒子数量 默认100
@@ -33,7 +33,7 @@ public class RainView extends RelativeLayout {
     @Override
     protected final void onDraw(Canvas canvas) {
         if (thread == null) {
-            thread = new control();
+            thread = new ControlThread();
             thread.start();
         } else {
             for (int i = 0; i < list.size(); i++) {
@@ -42,7 +42,7 @@ public class RainView extends RelativeLayout {
         }
     }
 
-    public class control extends Thread {
+    public class ControlThread extends Thread {
         @Override
         public void run() {
             init();

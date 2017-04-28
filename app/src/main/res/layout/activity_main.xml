@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/content_"
     android:layout_height="match_parent"
     tools:context="walden.com.particleanimationtest.MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="#a000">
 
         <Button
             android:id="@+id/rain"
@@ -45,5 +48,47 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/a19" />
 
+
+    <LinearLayout
+        android:id="@+id/control_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginBottom="15dp"
+        android:background="#bEFFC2"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/control_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/control_1"
+        android:layout_marginBottom="3dp"
+        android:background="#bEFFC2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bt_1" />
+
+        <Button
+            android:id="@+id/bt_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bt_2" />
+
+        <Button
+            android:id="@+id/bt_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bt_3" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>
