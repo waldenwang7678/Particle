@@ -23,7 +23,7 @@ import walden.com.particleanimationtest.smash.factory.ParticleFactory;
  */
 public class ExplosionField extends View {
     private static final String TAG = "ExplosionField";
-    private ArrayList<ExplosionAnimator> explosionAnimators;
+    private ArrayList<ExplosionAnimator> explosionAnimatorsList;
     private HashMap<View, ExplosionAnimator> explosionAnimatorsMap;
     private OnClickListener onClickListener;
     private ParticleFactory mParticleFactory;
@@ -39,7 +39,7 @@ public class ExplosionField extends View {
     }
 
     private void init(ParticleFactory particleFactory) {
-        explosionAnimators = new ArrayList<ExplosionAnimator>();
+        explosionAnimatorsList = new ArrayList<ExplosionAnimator>();
         explosionAnimatorsMap = new HashMap<View, ExplosionAnimator>();
         mParticleFactory = particleFactory;
         attach2Activity((Activity) getContext());   // 将View添加到contentView中 & match/match
@@ -48,7 +48,7 @@ public class ExplosionField extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        for (ExplosionAnimator animator : explosionAnimators) {
+        for (ExplosionAnimator animator : explosionAnimatorsList) {
             animator.draw(canvas);
         }
     }
@@ -108,7 +108,7 @@ public class ExplosionField extends View {
     //破碎动画
     private void explode(final View view, Rect rect) {
         final ExplosionAnimator animator = new ExplosionAnimator(this, Utils.createBitmapFromView(view), rect, mParticleFactory);  //factory 由本类构造方法传入
-        explosionAnimators.add(animator);
+        explosionAnimatorsList.add(animator);
         explosionAnimatorsMap.put(view, animator);
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -122,7 +122,7 @@ public class ExplosionField extends View {
                 view.animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(150).start();
 
                 //动画结束时从动画集中移除
-                explosionAnimators.remove(animation);
+                explosionAnimatorsList.remove(animation);
                 explosionAnimatorsMap.remove(view);
                 animation = null;
             }

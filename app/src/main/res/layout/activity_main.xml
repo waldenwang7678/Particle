@@ -30,9 +30,12 @@
             android:text="破碎" />
 
         <Button
+            android:id="@+id/spark"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="spark"
+            android:textAllCaps="false" />
 
         <Button
             android:layout_width="0dp"

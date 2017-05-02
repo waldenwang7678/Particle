@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
         init();
     }
 
     private void init() {
+        ButterKnife.inject(this);
         activity = this;
         drawable = getResources().getDrawable(R.drawable.shape_particle);
     }
@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.smash)
     void smash() {
         Intent intent = new Intent(this, SmashActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.spark)
+    void spark() {
+        Intent intent = new Intent(this, SparkActivity.class);
         startActivity(intent);
     }
 

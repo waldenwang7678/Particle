@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RainActivity" />
-        <activity android:name=".SmashActivity"></activity>
+        <activity android:name=".SmashActivity" />
+        <activity android:name=".SparkActivity"></activity>
     </application>
 
 </manifest>
