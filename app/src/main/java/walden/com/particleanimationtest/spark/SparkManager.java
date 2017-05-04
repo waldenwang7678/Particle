@@ -63,13 +63,11 @@ public class SparkManager {
             mDistance = getRandom(SparkView.WIDTH / 4, mRandom.nextInt(15)) + 1;
             mCurDistance = 0;
 
-            start = new Point(X, Y);
-            end = getRandomPoint(start.x, start.y, (int) mDistance);
+            start = new Point(X, Y);  //屏幕触摸点位置
+            end = getRandomPoint(start.x, start.y, (int) mDistance); //指定点为圆心 , 随机半径的圆内, 随机生成点
             c1 = getRandomPoint(start.x, start.y, mRandom.nextInt(SparkView.WIDTH / 16));
             c2 = getRandomPoint(end.x, end.y, mRandom.nextInt(SparkView.WIDTH / 16));
-        }
-        // 恢复火花路径
-        else {
+        } else {// 恢复火花路径
             start.set(store[2], store[3]);
             end.set(store[4], store[5]);
             c1.set(store[6], store[7]);
@@ -86,13 +84,11 @@ public class SparkManager {
         canvas.drawCircle(bezierPoint.x, bezierPoint.y, radius, mSparkPaint);
 
 
-        // 重置火花状态
+        // 重置火花状态(结束时)
         if (mCurDistance == mDistance) {
             store[0] = 0;
             store[1] = 0;
-        }
-        // 保持花火的状态
-        else {
+        } else { // 保持花火的状态
             store[0] = (int) mCurDistance;
             store[1] = (int) mDistance;
             store[2] = (int) start.x;

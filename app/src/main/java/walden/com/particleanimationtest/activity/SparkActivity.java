@@ -1,4 +1,4 @@
-package walden.com.particleanimationtest;
+package walden.com.particleanimationtest.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

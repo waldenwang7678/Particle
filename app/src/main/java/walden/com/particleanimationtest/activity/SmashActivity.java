@@ -1,8 +1,9 @@
-package walden.com.particleanimationtest;
+package walden.com.particleanimationtest.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import walden.com.particleanimationtest.R;
 import walden.com.particleanimationtest.smash.ExplosionField;
 import walden.com.particleanimationtest.smash.factory.ExplodeParticleFactory;
 import walden.com.particleanimationtest.smash.factory.FallingParticleFactory;

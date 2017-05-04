@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RainActivity" />
-        <activity android:name=".SmashActivity" />
-        <activity android:name=".SparkActivity"></activity>
+        <activity android:name=".activity.RainActivity" />
+        <activity android:name=".activity.SmashActivity" />
+        <activity android:name=".activity.SparkActivity" />
+        <activity android:name=".activity.FireWormsActivity"></activity>
     </application>
 
 </manifest>

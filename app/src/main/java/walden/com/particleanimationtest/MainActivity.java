@@ -12,6 +12,10 @@ import com.plattysoft.leonids.ParticleSystem;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import walden.com.particleanimationtest.activity.FireWormsActivity;
+import walden.com.particleanimationtest.activity.RainActivity;
+import walden.com.particleanimationtest.activity.SmashActivity;
+import walden.com.particleanimationtest.activity.SparkActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.fireworm)
+    void fireworm() {
+        Intent intent = new Intent(this, FireWormsActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.bt_1)
     void bt1() {
         control(1, flag1, ps1, new Runnable() {
@@ -95,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         control(2, flag2, ps2, new Runnable() {
             @Override
             public void run() {
-                ps2 = new ParticleSystem(activity, 80, R.drawable.asw, 1000, R.id.content_)
+                ps2 = new ParticleSystem(activity, 80, R.drawable.a20, 1000, R.id.content_)
                         .setSpeedModuleAndAngleRange(0f, 0.3f, 0, 180) //角度顺时针增加
                         .setRotationSpeed(144)
 //                        .setFadeOut(6000) //淡出的区间，默认从不透明到完全透明
@@ -110,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         control(3, flag3, ps3, new Runnable() {
             @Override
             public void run() {
-                ps3 = new ParticleSystem(activity, 100, R.drawable.asw, 5000)
+                ps3 = new ParticleSystem(activity, 100, R.drawable.a20, 5000)
                         .setSpeedRange(0.2f, 0.5f);
                 ps3.oneShot(sourcr_area, 20);
             }
@@ -122,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         control(4, flag4, ps4, new Runnable() {
             @Override
             public void run() {
-                ps4 = new ParticleSystem(activity, 10000, R.drawable.asw, 5000);
+                ps4 = new ParticleSystem(activity, 10000, R.drawable.a20, 5000);
                 ps4.emit(sourcr_area, 50);
             }
         });

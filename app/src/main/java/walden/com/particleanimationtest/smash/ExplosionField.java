@@ -84,7 +84,6 @@ public class ExplosionField extends View {
         //震动动画
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f).setDuration(150);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-
             Random random = new Random();
 
             @Override
@@ -93,7 +92,6 @@ public class ExplosionField extends View {
                 view.setTranslationY((random.nextFloat() - 0.5f) * view.getHeight() * 0.05f);
             }
         });
-
 
         animator.addListener(new AnimatorListenerAdapter() {
             @Override

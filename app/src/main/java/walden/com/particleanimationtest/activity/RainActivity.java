@@ -1,4 +1,4 @@
-package walden.com.particleanimationtest;
+package walden.com.particleanimationtest.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import walden.com.particleanimationtest.LiziRain.RainView;
+import walden.com.particleanimationtest.R;
 
 public class RainActivity extends AppCompatActivity {
 

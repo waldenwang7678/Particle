@@ -12,7 +12,7 @@ import walden.com.particleanimationtest.smash.factory.BooleanFactory;
 /**
  * Created by Administrator on 2015/11/29 0029.
  */
-public class BooleanParticle extends Particle1{
+public class BooleanParticle extends Particle1 {
     static Random random = new Random();
     float radius = BooleanFactory.PART_WH;
     float alpha;
@@ -27,7 +27,6 @@ public class BooleanParticle extends Particle1{
         super(color, x, y);
         mBound = bound;
     }
-
 
     @Override
     protected void draw(Canvas canvas, Paint paint) {

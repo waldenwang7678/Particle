@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="walden.com.particleanimationtest.RainActivity">
+    tools:context="walden.com.particleanimationtest.activity.RainActivity">
 
     <walden.com.particleanimationtest.LiziRain.RainView
         android:id="@+id/rainview"

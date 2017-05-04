@@ -49,6 +49,7 @@ public class SparkView extends SurfaceView implements SurfaceHolder.Callback, Ru
         mHolder.addCallback(this);
     }
 
+
     @Override
     public void run() {
 
@@ -67,7 +68,7 @@ public class SparkView extends SurfaceView implements SurfaceHolder.Callback, Ru
 
                         // 循环绘制所有火花
                         for (int[] n : sparks) {
-                            n = sparkManager.drawSpark(mCanvas, (int) X, (int) Y, n);
+                            sparkManager.drawSpark(mCanvas, (int) X, (int) Y, n);
                         }
 
                         // 控制帧数
@@ -98,6 +99,7 @@ public class SparkView extends SurfaceView implements SurfaceHolder.Callback, Ru
                         Y = event.getY();
                         break;
                     case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
                         sparkManager.isActive = false;
                         break;
                     default:
@@ -109,17 +111,16 @@ public class SparkView extends SurfaceView implements SurfaceHolder.Callback, Ru
         return true;
     }
 
-    // Surface的大小发生改变时调用
-    @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        drawBackgound();
-    }
-
-    // Surface创建时激发，一般在这里调用画面的线程
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         isRun = true;
         new Thread(this).start();
+    }
+
+    // Surface的大小发生改变时调用
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        drawBackgound();
     }
 
     // 销毁时激发，一般在这里将画面的线程停止、释放。
@@ -132,5 +133,6 @@ public class SparkView extends SurfaceView implements SurfaceHolder.Callback, Ru
         mCanvas = mHolder.lockCanvas();
         mCanvas.drawColor(Color.BLACK);
         mHolder.unlockCanvasAndPost(mCanvas);
+        //setBackgroundColor(Color.BLACK);
     }
 }
