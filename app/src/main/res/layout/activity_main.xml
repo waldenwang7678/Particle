@@ -54,6 +54,15 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/a19" />
 
+    <View
+        android:id="@+id/chimney"
+        android:layout_width="10dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="50dp"
+        android:background="#666" />
 
     <LinearLayout
         android:id="@+id/control_1"
@@ -64,6 +73,10 @@
         android:background="#bEFFC2"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/bt_5"
+            style="@style/buttonStyle"
+            android:text="bt_5" />
 
     </LinearLayout>
 
@@ -78,26 +91,22 @@
 
         <Button
             android:id="@+id/bt_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:text="bt_1" />
 
         <Button
             android:id="@+id/bt_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:text="bt_2" />
 
         <Button
             android:id="@+id/bt_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:text="bt_3" />
 
         <Button
             android:id="@+id/bt_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/buttonStyle"
             android:text="bt_4" />
 
 
