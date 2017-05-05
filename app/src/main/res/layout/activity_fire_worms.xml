@@ -7,6 +7,7 @@
     tools:context="walden.com.particleanimationtest.activity.FireWormsActivity">
 
     <walden.com.particleanimationtest.fireworms.FirewormsFlyView
+        android:background="#555"
         android:id="@+id/fire"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
