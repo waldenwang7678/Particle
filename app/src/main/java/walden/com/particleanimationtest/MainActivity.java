@@ -160,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
                     flag4 = false;
                     break;
             }
-
         } else {
             if (ps != null) {
                 ps.cancel();
@@ -189,11 +188,11 @@ public class MainActivity extends AppCompatActivity {
     void start() {     //  this , 最多粒子数 , 粒子资源  , 时间
         if (!start) {
             psStart = new ParticleSystem(this, 300, drawable, 3000)   //时间控制粒子显示尺寸
-/*mInitializers*/.setAcceleration(0.00003f, 270)     //加速度和方向
-/*mModifiers */.addModifier(new ScaleModifier(0.2f, 2f, 700, 2000)) //1000ms之后开始从0.2f到2f变化
-/*mModifiers */.setFadeOut(6000) //淡出的区间，默认从不透明到完全透明
-/*mInitializers*/.setSpeedModuleAndAngleRange(0.001f, 0.005f, 250, 290) //初始速度和角度
-/*mInitializers*/.setRotationSpeedRange(0, 180);  //旋转速度范围
+                    .setAcceleration(0.00003f, 270)     //加速度和方向
+                    .addModifier(new ScaleModifier(0.2f, 2f, 700, 2000)) //700-2000之间从0.2f到2f变化
+                    .setFadeOut(3000)                   //淡出的区间，默认从不透明到完全透明
+                    .setSpeedModuleAndAngleRange(0.001f, 0.005f, 250, 290) //初始速度和角度
+                    .setRotationSpeedRange(0, 180);  //旋转速度范围
             //psStart.emit(chimneyhead, 20);   //view , 每秒产生的粒子数
             psStart.emitWithGravity(chimney, Gravity.TOP | Gravity.CENTER, 20);    //在动画View的产生位置
             start = true;
@@ -201,13 +200,5 @@ public class MainActivity extends AppCompatActivity {
             psStart.cancel();
             start = false;
         }
-
-        /*new ParticleSystem(this, 500, R.mipmap.startup_smoke, 5000)
-                .setAcceleration(0.00003f, 270)
-                .addModifier(new ScaleModifier(0, 1.2f, 1000, 4000))
-                .setFadeOut(5000)
-                .setRotationSpeedRange(0, 180)
-                .emit(tvSmoke, 50);*/
     }
-
 }
